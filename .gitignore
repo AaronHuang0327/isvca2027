@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+# editors
+.vscode/
+.idea/
+*.swp
+# node (not used, but keeps stray installs out)
+node_modules/

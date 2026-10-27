@@ -1,0 +1,46 @@
+# Netlify configuration for isvca2027.org
+# The site is plain static HTML — no build step is required.
+
+[build]
+  publish = "."
+  command = ""
+
+# Security + caching headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Friendly URLs without the .html suffix
+[[redirects]]
+  from = "/register"
+  to = "/registration.html"
+  status = 301
+
+[[redirects]]
+  from = "/abstracts"
+  to = "/abstract-guidelines.html"
+  status = 301
+
+[[redirects]]
+  from = "/submit"
+  to = "/submit-abstract.html"
+  status = 301
+
+[[redirects]]
+  from = "/awards"
+  to = "/awards.html"
+  status = 301
