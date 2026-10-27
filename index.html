@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=3">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@type":"Event",
@@ -43,6 +43,8 @@
 <header class="site-head">
   <div class="wrap site-head__in">
     <a class="site-head__brand" href="/"><img src="assets/logo.webp" width="288" height="180" alt="ISVCA 2027 Taiwan"></a>
+    <a class="head-cta" href="https://payment.cgprstw.org/13" target="_blank" rel="noopener"
+       aria-label="Register and pay on the official payment page">Register</a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
       <svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="1.6"/></svg>
       Menu
@@ -53,9 +55,9 @@
       <a href="#program">Program</a>
       <a href="#abstracts">Abstracts</a>
       <a href="#faculty">Faculty</a>
-      <a href="registration.html">Registration</a>
+      <a href="registration.html">Registration<span class="nav-sub">Fees &amp; rules</span></a>
       <a href="#travel">Venue &amp; travel</a>
-      <a class="nav-cta" href="https://payment.cgprstw.org/13" target="_blank" rel="noopener">Register</a>
+      <a class="nav-cta" href="https://payment.cgprstw.org/13" target="_blank" rel="noopener">Register ↗</a>
     </nav>
   </div>
 </header>
@@ -64,35 +66,42 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <h1 class="sr-only">ISVCA 2027 — 18th Meeting of the International Society of Vascularized Composite
-      Allotransplantation, May 8–9, 2027, Research Building, Linkou Chang Gung Memorial Hospital, Taoyuan, Taiwan</h1>
+    <!-- Official poster, full-bleed, uncropped, in its own proportions -->
+    <div class="hero__poster">
+      <img src="assets/poster.webp"
+           srcset="assets/poster.webp 1200w, assets/poster@2x.webp 2400w"
+           sizes="(max-width: 1600px) 100vw, 1600px"
+           width="2400" height="1350" fetchpriority="high" decoding="async"
+           alt="ISVCA 2027 congress poster — 18th Meeting of the International Society of Vascularized Composite Allotransplantation, 8–9 May 2027, Linkou Chang Gung Memorial Hospital, Taiwan.">
+    </div>
 
-    <div class="wrap hero__wrap">
-      <p class="hero__poster">
-        <img src="assets/poster.webp"
-             srcset="assets/poster.webp 1200w, assets/poster@2x.webp 2400w"
-             sizes="(max-width: 1264px) calc(100vw - 32px), 1200px"
-             width="2400" height="1350" fetchpriority="high" decoding="async"
-             alt="ISVCA 2027 congress poster — 18th Meeting of the International Society of Vascularized Composite Allotransplantation, 8–9 May 2027, Linkou Chang Gung Memorial Hospital, Taiwan.">
-      </p>
-      <p class="hero__tools"><a href="assets/poster-full.jpg" target="_blank" rel="noopener">View full-size poster</a></p>
+    <div class="wrap hero__body">
+      <p class="hero__tools"><a href="assets/poster-full.jpg" target="_blank" rel="noopener">View full-size poster ↗</a></p>
 
-      <p class="hero__where">May 8–9, 2027 · Research Building, Linkou Chang Gung Memorial Hospital, Taiwan</p>
+      <div class="hero__ident">
+        <h1 class="hero__title">ISVCA 2027</h1>
+        <p class="hero__fullname">18th Meeting of the International Society of Vascularized Composite Allotransplantation</p>
+        <p class="hero__when">May 8–9, 2027</p>
+        <p class="hero__venue">Research Building, Linkou Chang Gung Memorial Hospital, Taoyuan, Taiwan</p>
+      </div>
 
       <div class="hero__actions">
         <a class="btn btn--primary" href="https://payment.cgprstw.org/13" target="_blank" rel="noopener">Register</a>
         <a class="btn btn--secondary" href="submit-abstract.html">Submit an abstract</a>
-        <a class="link-quiet" href="#program">View program →</a>
       </div>
+      <p class="hero__proglink"><a class="link-quiet" href="#program">View program →</a></p>
 
       <ul class="hero__deadlines">
         <li>
           <span class="k">Abstract deadline</span>
-          <span class="v">November 30, 2026<small>23:59 US Eastern Time · <a href="#dates">all key dates</a></small></span>
+          <span class="v">November 30, 2026</span>
+          <span class="m">23:59 US Eastern Time</span>
+          <span class="m"><a href="#dates">All key dates</a></span>
         </li>
         <li>
           <span class="k">Early-bird registration</span>
-          <span class="v">Ends February 15, 2027<small><a href="registration.html">Fees &amp; policy</a></small></span>
+          <span class="v">Ends February 15, 2027</span>
+          <span class="m"><a href="registration.html">Fees &amp; policy</a></span>
         </li>
       </ul>
 
@@ -195,8 +204,8 @@
       </div>
       <dl class="datalist">
         <div class="datalist__row is-key">
-          <dt class="datalist__term">November 30, 2026<small>23:59 US Eastern Time</small></dt>
-          <dd class="datalist__desc">Abstract submission deadline <small>12:59 on December 1 in Taiwan</small></dd>
+          <dt class="datalist__term">November 30, 2026<span class="m">23:59 US Eastern Time</span></dt>
+          <dd class="datalist__desc">Abstract submission deadline<span class="m">12:59 on December 1 in Taiwan</span></dd>
         </div>
         <div class="datalist__row">
           <dt class="datalist__term">December 14, 2026</dt>
@@ -516,8 +525,8 @@
       </div>
 
       <div>
-        <p class="tablewrap__hint">Scroll the table sideways on a narrow screen.</p>
-        <div class="tablewrap">
+        <p class="tablewrap__hint">Scroll the table sideways to see standard and late rates.</p>
+        <div class="tablewrap" tabindex="0" role="region" aria-label="Registration fees by category and date">
           <table class="feetable">
             <caption class="sr-only">ISVCA 2027 registration fees in New Taiwan Dollars</caption>
             <thead>
@@ -610,11 +619,11 @@
           <p style="color:var(--muted);font-size:.9375rem">At Airport MRT A8 Station — connected to the hospital complex,
             walking distance to the venue.</p>
           <dl class="datalist" style="margin:14px 0 10px">
-            <div class="datalist__row" style="padding:9px 0;grid-template-columns:1fr auto">
+            <div class="datalist__row datalist__row--price">
               <dt class="datalist__term" style="font-weight:400;color:var(--ink)">Superior Single <small>incl. 1 breakfast</small></dt>
               <dd class="datalist__desc" style="font-weight:600;color:var(--navy);white-space:nowrap">NT$3,500</dd>
             </div>
-            <div class="datalist__row" style="padding:9px 0;grid-template-columns:1fr auto">
+            <div class="datalist__row datalist__row--price">
               <dt class="datalist__term" style="font-weight:400;color:var(--ink)">Superior Room <small>incl. 1–2 breakfast</small></dt>
               <dd class="datalist__desc" style="font-weight:600;color:var(--navy);white-space:nowrap">NT$3,900</dd>
             </div>
@@ -630,15 +639,15 @@
           <h3>Fullon Poshtel Linkou</h3>
           <p style="color:var(--muted);font-size:.9375rem">In Linkou / Guishan — a short ride from the venue.</p>
           <dl class="datalist" style="margin:14px 0 10px">
-            <div class="datalist__row" style="padding:9px 0;grid-template-columns:1fr auto">
+            <div class="datalist__row datalist__row--price">
               <dt class="datalist__term" style="font-weight:400;color:var(--ink)">Standard Room</dt>
               <dd class="datalist__desc" style="font-weight:600;color:var(--navy);white-space:nowrap">NT$2,800</dd>
             </div>
-            <div class="datalist__row" style="padding:9px 0;grid-template-columns:1fr auto">
+            <div class="datalist__row datalist__row--price">
               <dt class="datalist__term" style="font-weight:400;color:var(--ink)">Superior Room</dt>
               <dd class="datalist__desc" style="font-weight:600;color:var(--navy);white-space:nowrap">NT$3,000</dd>
             </div>
-            <div class="datalist__row" style="padding:9px 0;grid-template-columns:1fr auto">
+            <div class="datalist__row datalist__row--price">
               <dt class="datalist__term" style="font-weight:400;color:var(--ink)">Family Room (4)</dt>
               <dd class="datalist__desc" style="font-weight:600;color:var(--navy);white-space:nowrap">NT$4,300</dd>
             </div>
@@ -769,6 +778,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js" defer></script>
+<script src="assets/js/site.js?v=3" defer></script>
 </body>
 </html>
