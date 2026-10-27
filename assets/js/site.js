@@ -83,25 +83,6 @@
   spy('#site-nav a[href^="#"]', 'aria-current');
   spy('.toc a[href^="#"]', 'aria-current');
 
-  /* ---- gentle reveal (skipped when reduced motion is preferred) ------ */
-  if (window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      && 'IntersectionObserver' in window) {
-    var ro = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('is-in'); ro.unobserve(en.target); }
-      });
-    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function (el) { ro.observe(el); });
-    // Safety: anything still hidden after 2s is shown regardless.
-    setTimeout(function () {
-      document.querySelectorAll('.reveal:not(.is-in)').forEach(function (el) {
-        el.classList.add('is-in');
-      });
-    }, 2000);
-  } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-in'); });
-  }
-
   /* ---- subscribe form (Formspree, stays on page) --------------------- */
   var nf = document.getElementById('notifyForm');
   if (nf) {
