@@ -604,3 +604,115 @@ dl.struct dd{margin:0;color:var(--ink);padding:9px 0;border-top:1px solid var(--
   dl.struct dd{border-top:none;padding-top:2px}
 }
 .refundtable td:last-child{text-align:right;white-space:nowrap;font-weight:600;color:var(--navy)}
+
+/* ==========================================================================
+   Reading layers — overview first, detail on request
+   ========================================================================== */
+
+/* heading sits close to its own content; sections stay apart */
+.s-head--tight{margin-bottom:22px}
+.s-head--tight .lede{margin-top:.5rem}
+.minihead{font-size:.8125rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--text-secondary);margin:0 0 .5rem}
+
+/* lead paragraph: one sentence, larger, the thing to remember */
+.lead{font-size:clamp(1.1875rem,1.7vw,1.375rem);line-height:1.5;color:var(--brand-navy);
+  max-width:42ch;margin:0 0 1rem;font-weight:500;letter-spacing:-.005em}
+
+/* host line */
+.hostline{margin:22px 0 18px;padding-top:14px;border-top:1px solid var(--rule);max-width:var(--measure)}
+.hostline__k{margin:0 0 .25rem;font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--text-secondary)}
+.hostline__v{margin:0;color:var(--text-primary);font-size:.9375rem;line-height:1.55}
+
+/* scientific themes: a plain ruled list */
+.themes{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.themes li{margin:0;padding:11px 0;border-bottom:1px solid var(--rule);line-height:1.45}
+
+/* ---------- Disclosure: specific label, 48px target, native & searchable */
+.more{margin-top:20px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.more > summary{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  min-height:48px;padding:12px 2px;cursor:pointer;list-style:none;
+  font-weight:600;font-size:.9375rem;color:var(--brand-teal)}
+.more > summary::-webkit-details-marker{display:none}
+.more > summary::after{content:"";flex:0 0 auto;width:8px;height:8px;margin-right:6px;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);transition:transform var(--t) ease}
+.more[open] > summary::after{transform:rotate(-135deg) translateY(-2px)}
+.more > summary:hover{color:var(--brand-teal-hover)}
+.more > summary:focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px}
+.more__body{padding:2px 0 18px}
+.more__body > :last-child{margin-bottom:0}
+.more__body .datalist{border-top:none}
+.more--compact{margin-top:14px}
+.more--compact > summary{font-size:.875rem;min-height:44px}
+.newslist--more{border-top:none}
+
+/* ---------- Milestones: the four dates that decide things -------------- */
+.milestones{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--brand-navy)}
+.milestone{margin:0;padding:16px 20px 18px 0}
+.milestone + .milestone{padding-left:20px;border-left:1px solid var(--rule)}
+.milestone__date{margin:0;font-size:1.1875rem;font-weight:600;color:var(--brand-navy);line-height:1.25}
+.milestone.is-key .milestone__date{color:var(--accent-warm-text)}
+.milestone__what{margin:.35rem 0 0;color:var(--text-primary);line-height:1.45}
+.milestone__note{margin:.3rem 0 0;font-size:.8125rem;color:var(--text-secondary);line-height:1.4}
+@media (max-width:900px){
+  .milestones{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .milestone:nth-child(3){padding-left:0;border-left:none}
+  .milestone:nth-child(n+3){border-top:1px solid var(--rule)}
+}
+@media (max-width:560px){
+  .milestones{grid-template-columns:minmax(0,1fr)}
+  .milestone,.milestone + .milestone{padding:14px 0;border-left:none}
+  .milestone + .milestone{border-top:1px solid var(--rule)}
+}
+
+/* ---------- Abstracts: three steps side by side, key limits as figures -- */
+.steps--3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px;border-top:none}
+.steps--3 li{grid-template-columns:32px minmax(0,1fr);gap:0 12px;border-top:1px solid var(--rule);border-bottom:none;padding:16px 0 4px}
+@media (max-width:860px){
+  .steps--3{grid-template-columns:minmax(0,1fr)}
+  .steps--3 li{padding:14px 0}
+  .steps--3 li:last-child{border-bottom:1px solid var(--rule)}
+}
+.amount--abs{margin:24px 0 26px}
+.amount--abs b{font-size:1.25rem}
+.hero__actions--left{justify-content:flex-start;margin-top:4px}
+@media (max-width:760px){
+  .hero__actions--left{flex-direction:row;flex-wrap:wrap}
+  .hero__actions--left .btn{flex:0 1 auto;width:auto}
+}
+
+/* ---------- Awards: one line of requirement under each amount ---------- */
+.award__req{margin:0;color:var(--text-primary);font-size:.9375rem;line-height:1.5}
+.award__how{max-width:var(--measure);margin:20px 0 0;color:var(--text-primary)}
+.award__how + .award__how{margin-top:10px}
+#awards .hero__actions{margin-top:22px}
+
+/* ---------- Registration key points ----------------------------------- */
+.keypoints{list-style:none;margin:26px 0 24px;padding:0;max-width:var(--measure);border-top:1px solid var(--rule)}
+.keypoints li{margin:0;padding:12px 0;border-bottom:1px solid var(--rule);line-height:1.55}
+
+/* ---------- Hotels: facts row, then two calm columns ------------------ */
+.keyfacts{list-style:none;margin:0 0 28px;padding:14px 0;display:flex;flex-wrap:wrap;gap:12px 36px;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.keyfacts li{margin:0;display:flex;flex-direction:column;min-width:120px;max-width:240px}
+.keyfacts b{font-size:1.125rem;font-weight:600;color:var(--brand-navy);line-height:1.25}
+.keyfacts span{font-size:.8125rem;color:var(--text-secondary);line-height:1.4;margin-top:2px}
+.hotels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.hotel h3{font-size:1.25rem;margin:0 0 .35rem}
+.hotel__where{margin:0 0 .6rem;color:var(--text-secondary);max-width:46ch}
+.hotel__from{margin:0 0 .9rem;color:var(--text-primary)}
+.hotel__from b{font-size:1.125rem;color:var(--brand-navy)}
+@media (max-width:760px){
+  .hotels{grid-template-columns:minmax(0,1fr);gap:32px}
+  .keyfacts{gap:12px 24px}
+  .keyfacts li{min-width:calc(50% - 12px);max-width:none}
+}
+.hero__actions--left{align-items:center}
+.hero__actions--left .link-quiet{align-self:center}
+/* 761–1000px: two Congress Scientific Awards side by side, Nakos across the row */
+@media (min-width:761px) and (max-width:1000px){
+  .awards--3 .award:nth-child(3){grid-column:1 / -1;padding-left:0;border-left:none;border-top:1px solid var(--rule)}
+}
