@@ -119,33 +119,12 @@
     title.addEventListener('input', upd); upd();
   }
 
-  var wantAward = document.getElementById('wantAward');
-  var awardBox = document.getElementById('awardBox');
-  if (wantAward && awardBox) {
-    var sync = function () {
-      var on = wantAward.checked;
-      awardBox.hidden = !on;
-      awardBox.querySelectorAll('input[name="Award applied for"],input[name="Eligibility category"]')
-        .forEach(function (el) { el.required = on; });
-      var letter = document.getElementById('letter');
-      var attend = document.getElementById('attendCommit');
-      if (letter) letter.required = on;
-      if (attend) attend.required = on;
-    };
-    wantAward.addEventListener('change', sync); sync();
-  }
+  /* Travel award applications are handled by ISVCA by email, not in this
+     form, so there is no award panel to toggle here. */
 
   var absForm = document.getElementById('absForm');
   if (absForm) {
-    absForm.addEventListener('submit', function (e) {
-      if (wantAward && wantAward.checked) {
-        var pres = document.querySelector('input[name="Is presenting author"]:checked');
-        if (pres && pres.value === 'No') {
-          e.preventDefault();
-          window.alert('Award applicants must be the presenting author. Please have the presenting author submit this abstract, or uncheck the award option.');
-          return;
-        }
-      }
+    absForm.addEventListener('submit', function () {
       var b = document.getElementById('submitBtn');
       if (b) { b.disabled = true; b.textContent = 'Submitting…'; }
     });

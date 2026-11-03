@@ -449,10 +449,20 @@ table{border-collapse:collapse;width:100%}
 .award__amount{font-weight:600;color:var(--navy);margin:0 0 .6rem}
 .award p{color:var(--muted)}
 .award > :last-child{margin-bottom:0}
+/* three award streams sit three-up on wide screens */
+.awards--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.awards--3 .award{padding:26px 24px 26px 0}
+.awards--3 .award + .award{padding-left:24px}
+@media (max-width:1000px){
+  .awards--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .awards--3 .award:nth-child(odd){padding-left:0;border-left:none}
+  .awards--3 .award:nth-child(even){padding-left:24px;border-left:1px solid var(--rule)}
+}
 @media (max-width:760px){
-  .awards{grid-template-columns:minmax(0,1fr)}
+  .awards,.awards--3{grid-template-columns:minmax(0,1fr)}
   .award{padding:22px 0}
-  .award + .award{padding-left:0;border-left:none}
+  .award + .award,.awards--3 .award,.awards--3 .award + .award,
+  .awards--3 .award:nth-child(even){padding-left:0;padding-right:0;border-left:none}
 }
 
 /* ---------- Photo cards (Explore) ------------------------------------- */
